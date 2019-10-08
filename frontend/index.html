@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal LLH</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.0.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+
+  <!-- <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script> -->
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.0.1/dist/aos.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+</head>
+
+<header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#" style="color:#007EA7; font-weight: bold;">Portal LLH</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        style="margin :2px 0;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item active" style="align-items: center">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="news_page.html">Berita</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="form_page.html">Pengajuan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="track_page.html">Pelacakan <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+
+
+</header>
+
+<body>
+
+  <!-- News Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item  active">
+            <div class="carousel-bg" style="background-image: linear-gradient(
+              rgba(0,0,20,.55),
+              rgba(0,0,0,.65)),url('src/image.jpg');">
+                <img src="src/logo-itb-1024px.png" style="height: 200px;width:200px">
+                <p class="intro-title">
+                    Lembaga Layanan Hukum Institut Teknologi Bandung
+                </p>
+            </div>
+        </div>
+        <div class="carousel-item" >
+            <div class="carousel-bg" style="background-image: linear-gradient(
+              rgba(0,0,20,.55),
+              rgba(0,0,0,.65)),url('src/image.jpg');">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-bg" style="background-image: linear-gradient(
+              rgba(0,0,20,.55),
+              rgba(0,0,0,.65)),url('src/image.jpg');">
+            </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+
+  <!-- <div class="ftco-blocks-cover-1" style="background-image:linear-gradient(
+                  rgba(0,0,20,.45),
+                  rgba(0,0,0,.45)),
+                  url('src/image.jpg'); width :100%;">
+    <div class="container site-section-cover overlay" data-stellar-background-ratio="0.5">
+      <div id="header-row" class="row align-items-center" style="height: 100%;">
+        <div class="col-md-5 header-text">
+          <h1 class="mb-3">Lembaga Layanan Hukum Institut Teknologi Bandung</h1>
+          
+        </div>
+        <div class="col-md-6 sm-5 ml-auto swiper-header">
+          <div class="swiper-container">
+            <div class="swiper-wrapper ">
+              <div class="swiper-slide ">
+                <div class="card" style="width: 100%;">
+                  <img src="src/img_1.jpg" class="card-img-top" alt="img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title">Berita Terkini</h5>
+                    <p class="card-text">5 September 2019</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card bg-light" style="width: 100%;">
+                  <img src="src/img_1.jpg" class="card-img-top" alt="img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title">Berita Terkini</h5>
+                    <p class="card-text">5 September 2019</p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card bg-light" style="width: 100%;">
+                  <img src="src/img_1.jpg" class="card-img-top" alt="img-fluid">
+                  <div class="card-body">
+                    <h5 class="card-title">Berita Terkini</h5>
+                    <p class="card-text">5 September 2019</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev" style="color: #FFE66D"></div>
+            <div class="swiper-button-next" style="color: #FFE66D"></div>
+
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Pencarian SK -->
+  <div class="main-search align-items-center" >
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div id="search-bar-title" class="col-md-3 my-auto">
+          <div>
+            Pencarian SK
+          </div>
+        </div>
+        <div class="col-md-9">
+
+          <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Pencarian">
+            <div class="input-group-append">
+              <div class="input-group-text search-button" onclick="window.location.href = 'search_result.html';">
+                <a class="fas fa-search"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <div class="container main-menu">
+    <div class="row row-eq-height card-container">
+      <div class="col-sm">
+        <div class="home-main-feature has-text-centered" data-aos="fade-up">
+          <a href="form_page.html">
+            <div class="text-center">
+              <img src="src/search.jpg" style="width:200px; height:200px; margin-bottom:10px;" alt="Image">
+            </div>
+            <div class="text-center">
+              <h1>Pengajuan</h1>
+              <h4>Fitur untuk pengajuan dokumen.</h4>
+            </div>
+          </a>
+        </div>
+
+        <!-- <div class="card" style="width: 100%; border-radius: 25px; height:400px;">
+                                  <div class="card-header" style="background-color: black;">
+                                    
+                                  </div>
+                                  <div class="card-body">
+                                    <h5 class="card-title">Berita Terkini</h5>
+                                    <p class="card-text">5 September 2019</p>
+                                  </div>
+                                </div> -->
+
+      </div>
+      <div class="col-sm align-self-center">
+        <div class="home-main-feature has-text-centered" data-aos="fade-up">
+          <a href="track_page.html">
+            <div class="text-center">
+              <img src="src/search.jpg" style="width:200px; height:200px; margin-bottom:10px;" alt="Image">
+            </div>
+            <div class="text-center">
+              <h1>Pelacakan</h1>
+              <h4>Lihat progress pengerjaan dari SK yang kalian ajukan.</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="info-statistic" style="background-color: #007EA7; width:100%">
+    <div class="container ">
+      <div class="row">
+        <div class="col text-center">
+          <h1 style="color:#FFE66D; font-size:70px;">30</h1>
+          <h1 style="color:white;">SK jnds</h1>
+        </div>
+        <div class="col text-center">
+          <h1 style="color:#FFE66D; font-size:70px;">30</h1>
+          <h1 style="color:white;">SK jnds</h1>
+        </div>
+        <div class="col text-center">
+          <h1 style="color:#FFE66D; font-size:70px;">30</h1>
+          <h1 style="color:white;">SK jnds</h1>
+        </div>
+        <div class="col text-center">
+          <h1 style="color:#FFE66D; font-size:70px;">30</h1>
+          <h1 style="color:white;">SK jnds</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="padding:0 10%;">
+    <h4>Latest News</h4>
+    <ul class="timeline">
+      <li>
+        <div class="row" style="padding:2% 0;">
+          <div class="col">
+            <img src="src/img_1.jpg" style="width:300px; height:200px;">
+          </div>
+          <div class="col">
+            <h1>Berita Pertama</h1>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="row" style="padding:2% 0;">
+          <div class="col">
+            <img src="src/img_1.jpg" style="width:300px; height:200px;">
+          </div>
+          <div class="col">
+            <h1>Berita Pertama</h1>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="row" style="padding:2% 0;">
+          <div class="col">
+            <img src="src/img_1.jpg" style="width:300px; height:200px;">
+          </div>
+          <div class="col">
+            <h1>Berita Pertama</h1>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- <div id="info-statistic"  style="background-color: #A4C3B2; height: 133px;">
+                          <div class="columns is-mobile">
+                            <div class="column has-text-centered">
+                              <p>30</p>
+                              <h1>SK jnds</h1>
+                            </div>
+                            <div class="column has-text-centered">
+                                <p>30</p>
+                                <h1>SK jnds</h1>
+                              </div>
+                              <div class="column has-text-centered">
+                                  <p>30</p>
+                                  <h1>SK jnds</h1>
+                                </div>
+                                <div class="column has-text-centered">
+                                    <p>30</p>
+                                    <h1>SK jnds</h1>
+                                  </div>
+                          </div>
+                        </div>
+
+                        <div id="column-content" class="columns has-text-centered">
+                          <a class="column has-text-centered " >
+                            
+                            <div class="home-main-feature" data-aos="fade-up">
+                              <img src="src/bg.jpg" style="width:200px; height:200px; margin-bottom:10px;">
+                                <div>
+                                  <h1>Pencarian</h1>
+                                  <h2>faskjjdfhjdfsajkkjs</h2>
+                                </div>
+                              </div>
+                            </a>
+                            <a class="column has-text-centered " >
+                                <div class="home-main-feature" data-aos="fade-up">
+                                  <img src="src/bg.jpg" style="width:200px; height:200px; margin-bottom:10px;">
+                                    <div>
+                                      <h1>Pencarian</h1>
+                                      <h2>faskjjdfhjdfsajkkjs</h2>
+                                    </div>
+                                  </div>
+                                </a>
+                                <a class="column has-text-centered " >
+                                    <div class="home-main-feature" data-aos="fade-up">
+                                      <img src="src/bg.jpg" style="width:200px; height:200px; margin-bottom:10px;">
+                                        <div>
+                                          <h1>Pencarian</h1>
+                                          <h2>faskjjdfhjdfsajkkjs</h2>
+                                        </div>
+                                      </div>
+                                    </a>
+                        </div> -->
+
+  <footer class="footer bg-dark text-light" style="background-color: black; height: 100%;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 footer-content">
+              <h1>Lembaga Layanan Hukum</h1>
+              <p>Gedung CCAR ITB Lantai 5</p>
+              <p>Jalan Tamansari 64 Bandung</p>
+              <p>Telp : 022-2500939</p>
+              <p>Fax: 022-2500939</p>
+              <p>Waktu Layanan</p>
+              <p>07.30-16.30 WIB ( Senin-Jumat)</p>
+            </div>
+            <div class="col-lg-4 footer-content">
+                <a href="http://seabaditb.id"><img src="src/100.png"
+                    style="width:300px; height:200px;;"></a>
+              </div>
+            <div class="col-lg-4 footer-content">
+              <p>Didukung oleh</p>
+              <a href="https://ppid.itb.ac.id"><img src="src/ppid.png"
+                  style="width:300px; height:200px; margin-top:10px;"></a>
+            </div>
+          </div>
+          <div class="text-center">Tim PPID ITB</div>
+    </div>
+  </footer>
+
+
+
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'cube',
+      grabCursor: true,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    })
+  </script>
+
+
+
+</body>
+
+
+</html>

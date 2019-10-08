@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hasil Pencarian</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/form_style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <link rel="stylesheet" href="style/step_progress.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar sticky-top  navbar-dark navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Portal LLH</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="news_page.html">Berita</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="form_page.html">Pengajuan</a>
+          </li>
+          <li class="nav-item active" style=" margin-right:20px;">
+            <a class="nav-link" href="track_page.html">Pelacakan <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="index.html">Login</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <h1 id="title-page" class="text-center">
+    Hasil Pencarian
+  </h1>
+
+  <div class="container section">
+    <div class="input-group">
+      <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Pencarian">
+      <div class="input-group-append">
+        <div class="input-group-text search-button" onclick="window.location.href = 'search_result.html';">
+          <a class="fas fa-search"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="search-result" class="container table-responsive" >
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Nomor SK</th>
+              <th scope="col">Judul</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td style="width:40px">2019/08</td>
+              <td>SK akademik</td>
+              <td>View Download</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>2019/XX/08</td>
+              <td>sk wisuda via annex</td>
+              <td>View Download</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>2019/XXXX</td>
+              <td>sk tempat makan</td>
+              <td>View Download</td>
+            </tr>
+          </tbody>
+        </table>
+
+    <div style="height:40px;"></div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <footer class="footer bg-dark text-light" style="background-color: black; height: 100%;">
+
+    <div class="row">
+      <div class="col footer-content">
+        <h1>Lembaga Layanan Hukum</h1>
+        <p>Gedung CCAR ITB Lantai 5</p>
+        <p>Jalan Tamansari 64 Bandung</p>
+        <p>Telp : 022-2500939</p>
+        <p>Fax: 022-2500939</p>
+        <p>Waktu Layanan</p>
+        <p>07.30-16.30 WIB ( Senin-Jumat)</p>
+      </div>
+      <div class="col footer-content">
+        <p>Didukung oleh</p>
+        <a href="https://ppid.itb.ac.id"><img src="src/ppid.png"
+            style="width:300px; height:200px; margin-top:10px;"></a>
+      </div>
+    </div>
+    <div class="text-center">Tim PPID ITB</div>
+  </footer>
+</body>
+
+</html>
