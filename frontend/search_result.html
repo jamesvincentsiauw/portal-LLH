@@ -53,8 +53,8 @@
             <a class="nav-link" href="track_page.html">Pelacakan <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="index.html">Login</a>
-            </li>
+            <a class="nav-link" href="index.html">Login</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -78,37 +78,61 @@
   </div>
   </div>
 
-  <div id="search-result" class="container table-responsive" >
-      <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">No</th>
-              <th scope="col">Nomor SK</th>
-              <th scope="col">Judul</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td style="width:40px">2019/08</td>
-              <td>SK akademik</td>
-              <td>View Download</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>2019/XX/08</td>
-              <td>sk wisuda via annex</td>
-              <td>View Download</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>2019/XXXX</td>
-              <td>sk tempat makan</td>
-              <td>View Download</td>
-            </tr>
-          </tbody>
-        </table>
+  <div id="search-result" class="container table-responsive">
+    <table class="table table-striped text-center">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Nomor SK</th>
+          <th scope="col">Judul</th>
+          <th scope="col" style="width:200px">Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td style="width:40px">2019/08</td>
+          <td>SK akademik</td>
+          <td>
+            <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                  data-target="#myModal">View</button>
+                <button type="button" class="btn btn-primary btn-sm">Download</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>2019/XX/08</td>
+          <td>sk wisuda via annex</td>
+          <td>
+            <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                  data-target="#myModal">View</button>
+                <button type="button" class="btn btn-primary btn-sm">Download</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>2019/XXXX</td>
+          <td>sk tempat makan</td>
+          <td>
+            <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                  data-target="#myModal">View</button>
+                <button type="button" class="btn btn-primary btn-sm">Download</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
     <div style="height:40px;"></div>
     <nav aria-label="Page navigation example">
@@ -125,26 +149,41 @@
       </ul>
     </nav>
   </div>
+  
 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" style="overflow: hidden;">
+
+      <!-- Modal content-->
+      <object data="https://pdfobject.com/pdf/sample-3pp.pdf#page=2" type="application/not-a-pee-dee-eff-type" width="100%" height="100%" style="padding: 0px; display: inline-block;">
+        <iframe src="chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/content/web/viewer.html?file=https%3A%2F%2Fpdfobject.com%2Fpdf%2Fsample-3pp.pdf#page=2" style="background: none; border: none; box-shadow: none; float: none; display: block; height: 100%; margin: 0px; max-height: none; max-width: none; position: static; transform: none; visibility: visible; width: 100%;"></iframe>
+      </object>
+
+  </div>
+  
   <footer class="footer bg-dark text-light" style="background-color: black; height: 100%;">
 
-    <div class="row">
-      <div class="col footer-content">
-        <h1>Lembaga Layanan Hukum</h1>
-        <p>Gedung CCAR ITB Lantai 5</p>
-        <p>Jalan Tamansari 64 Bandung</p>
-        <p>Telp : 022-2500939</p>
-        <p>Fax: 022-2500939</p>
-        <p>Waktu Layanan</p>
-        <p>07.30-16.30 WIB ( Senin-Jumat)</p>
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-4 footer-content">
+              <h2>Lembaga Layanan Hukum</h2>
+              <p>Gedung CCAR ITB Lantai 5
+                Jalan Tamansari 64 Bandung
+                Telp : 022-2500939
+                Fax: 022-2500939
+                Waktu Layanan
+                07.30-16.30 WIB ( Senin-Jumat )</p>
+            </div>
+        <div class="col-lg-4 footer-content">
+          <a href="http://seabaditb.id"><img src="src/100.png" style="width:70%; "></a>
+        </div>
+        <div class="col-lg-4 footer-content">
+          <p>Didukung oleh</p>
+          <a href="https://ppid.itb.ac.id"><img src="src/ppid.png" style="width:70%; margin-top:10px;"></a>
+        </div>
       </div>
-      <div class="col footer-content">
-        <p>Didukung oleh</p>
-        <a href="https://ppid.itb.ac.id"><img src="src/ppid.png"
-            style="width:300px; height:200px; margin-top:10px;"></a>
-      </div>
+      <div class="text-center" style="padding: 20px;">Tim Pengembang PPID ITB</div>
     </div>
-    <div class="text-center">Tim PPID ITB</div>
   </footer>
 </body>
 
