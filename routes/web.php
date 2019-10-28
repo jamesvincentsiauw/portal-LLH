@@ -14,4 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('/submission/add','UserController@addSubmission');
+Route::post('/submission/track','UserController@trackSubmission');
+Route::post('/news/add','AdminController@addNews');
+Route::post('/news/edit','AdminController@editNews');
+Route::post('/news/delete','AdminController@deleteNews');
 Route::get('/tes','TesController@index');

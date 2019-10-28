@@ -3,15 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Submission;
-use Illuminate\Http\Request;
 use SSO\SSO;
 
 class UserController extends Controller
 {
-    public function searchSubmission($id){
-        $status=Submission::all()->where('id',$id);
-        return $status['status'];
-    }
     private function randomID($cat){
         $i = 0;
         $ret=$cat;
@@ -49,6 +44,20 @@ class UserController extends Controller
         }
         catch (\Exception $exception){
             return redirect()->back()->with('alert',$exception->getMessage());
+        }
+    }
+    public function trackSubmission($id){
+        try{
+            $submission = Submission::all()->where('id',$id);
+            if ($submission){
+                return redirect()->back()->with('data',$submission);
+            }
+            else {
+                return redirect()->back()->with('alert', 'Data Tidak Ditemukan!');
+            }
+        }
+        catch (\Exception $exception){
+            return redirect()->back()->with('alert',$exception);
         }
     }
 }
