@@ -32,10 +32,10 @@
 
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="nav navbar-nav navbar-right">
-          <li class="nav-item" style="align-items: center">
-            <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
           </li>
-          <li class="nav-item" style="align-items: center">
+          <li class="nav-item">
             <a class="nav-link" href="profile.html">Profile</a>
           </li>
           <li class="nav-item">

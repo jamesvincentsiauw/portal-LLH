@@ -2,7 +2,7 @@
 
 @section('content')
 <h1 id="title-page" class="text-center">
-    Pengajuan SK
+    Pengajuan Regulasi
   </h1>
 
   <div class="base-content" style="margin-top:50px;">
@@ -45,17 +45,13 @@
           <div id="display-file">
 
           </div>
-          <div class="upload-button" onchange="">
+          <div class="upload-button" onchange="file_name_display()">
               <input id='pict' type="file" name="myFile" accept="image/*" />
               Browse
           </div>
       </div>
   </div>
-
-
-
-
-    <button type="button" class="btn btn-primary submit-button">Submit</button>
-
+    <button type="button" class="btn btn-primary submit-button vertical-margin">Submit</button>
   </div>
+
   @endsection

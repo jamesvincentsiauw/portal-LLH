@@ -61,4 +61,11 @@
     </div>
  
   </div>
+  
+  <script>
+    function show_result() {
+      document.getElementById("track-result").setAttribute("style","display :block;");
+      document.getElementById("track-search-bar").setAttribute("style","margin-bottom:10%");
+    }
+  </script>
   @endsection

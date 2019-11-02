@@ -14,7 +14,7 @@
               rgba(0,0,20,.55),
               rgba(0,0,0,.65)),url('src/annex.jfif');">
           <img id="logo" src="src/logo-itb-1024px.png">
-          <p id="intro-title">
+          <p id="home-title">
             Lembaga Layanan Hukum
             Institut Teknologi Bandung
           </p>
@@ -72,32 +72,28 @@
 
 
   <div class="container main-menu">
-    <div class="row row-eq-height card-container">
-      <div class="col-sm">
-        <div class="home-main-feature has-text-centered" data-aos="fade-up">
+    <div class="row card-container">
+      <div class="col-sm home-main-feature has-text-centered" data-aos="fade-up">
           <a href="form_page.html">
             <div class="text-center">
-              <img src="src/search.jpg" style="width:200px; height:200px; margin-bottom:10px;" alt="Image">
+              <img class="main-feature-img" src="src/search.jpg" alt="Image">
             </div>
             <div class="text-center">
-              <h1>Pengajuan</h1>
-              <h4>Fitur untuk pengajuan dokumen.</h4>
+              <h2><strong>Pengajuan</strong></h2>
+              <h5>Fitur untuk pengajuan dokumen</h5>
             </div>
           </a>
-        </div>
       </div>
-      <div class="col-sm align-self-center">
-        <div class="home-main-feature has-text-centered" data-aos="fade-up">
+      <div class="col-sm align-self-center home-main-feature has-text-centered" data-aos="fade-up">
           <a href="track_page.html">
             <div class="text-center">
-              <img src="src/search.jpg" style="width:200px; height:200px; margin-bottom:10px;" alt="Image">
+              <img class="main-feature-img" src="src/search.jpg" alt="Image">
             </div>
             <div class="text-center">
-              <h1>Pelacakan</h1>
-              <h4>Lihat progress pengerjaan dari SK yang diajukan.</h4>
+              <h2><strong>Pelacakan</strong></h2>
+              <h5>Lihat progress pengerjaan dari SK yang diajukan</h5>
             </div>
           </a>
-        </div>
       </div>
     </div>
   </div>
@@ -106,57 +102,63 @@
     <div class="container ">
       <div class="row">
         <div class="col text-center">
-          <h1 style="color:#FFE66D; font-size:70px;">150</h1>
-          <h3 style="color:white;">Pengajuan SK</h3>
+          <h1 id="statistic-1" class="gold-text">150</h1>
+          <h4>Pengajuan SK</h4>
         </div>
         <div class="col text-center">
-          <h1 style="color:#FFE66D; font-size:70px;">80</h1>
-          <h3 style="color:white;">SK Terbit</h3>
+          <h1 id="statistic-2" class="gold-text">80</h1>
+          <h4>SK Terbit</h4>
         </div>
         <div class="col text-center">
-          <h1 style="color:#FFE66D; font-size:70px;">25</h1>
-          <h3 style="color:white;">Pengajuan Peraturan</h3>
+          <h1 id="statistic-3" class="gold-text">25</h1>
+          <h4>Pengajuan Peraturan</h4>
         </div>
         <div class="col text-center">
-          <h1 style="color:#FFE66D; font-size:70px;">12</h1>
-          <h3 style="color:white;">Pengajuan Kerjasama</h3>
+          <h1 id="statistic-4" class="gold-text">12</h1>
+          <h4>Pengajuan Kerjasama</h4>
         </div>
       </div>
     </div>
   </div>
 
   <div class="container text-center" style="padding:4% 0;">
-    <h2 style="margin-bottom: 40px;">Berita Terbaru</h2>
+    <h1 id="title-page"><strong>Berita Terbaru</strong></h1>
     <div class="row">
-      <div class="col-md-4">
-        <div class=" news-card">
-          <div class="news-img" style="background-image: url(src/img_1.jpg)"></div>
-          <div class="news-info">
-            <h4>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet
-              inimicu ut qui dolor oratio mnesarchum</h4>
-            <p class="news-date"> 18 Oktober 2019</p>
-          </div>
+      <div class="col-md-4 news-card-gap">
+        <div class=" news-card" data-aos="fade-up">
+          <a>
+              <div class="news-img" style="background-image: url(src/img_1.jpg)"></div>
+              <div class="news-info">
+                <h4>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet
+                  inimicu ut qui dolor oratio mnesarchum</h4>
+                <p class="news-date"> 18 Oktober 2019</p>
+              </div>
+          </a>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class=" news-card">
-          <div class="news-img" style="background-image: url(src/img_1.jpg)"></div>
-          <div class="news-info">
-            <h4>Lorem ipsum dolor sit amet sit lemnesarchum</h4>
-            <p class="news-date"> 18 Oktober 2019</p>
-          </div>
+      <div class="col-md-4 news-card-gap">
+        <div class=" news-card" data-aos="fade-up">
+          <a>
+              <div class="news-img" style="background-image: url(src/img_1.jpg)"></div>
+              <div class="news-info">
+                <h4>Lorem ipsum dolor sit amet sit lemnesarchum</h4>
+                <p class="news-date"> 18 Oktober 2019</p>
+              </div>
+          </a>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class=" news-card">
-          <div class="news-img" style="background-image: url(src/img_1.jpg)"></div>
-          <div class="news-info">
-            <h4>Lorem ipsum dolor </h4>
-            <p class="news-date"> 18 Oktober 2019</p>
-          </div>
+      <div class="col-md-4 news-card-gap">
+        <div class=" news-card" data-aos="fade-up">
+          <a>
+              <div class="news-img" style="background-image: url(src/img_1.jpg)"></div>
+              <div class="news-info">
+                <h4>Lorem ipsum dolor </h4>
+                <p class="news-date"> 18 Oktober 2019</p>
+              </div>
+          </a>
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-primary news-button">Lihat berita lainnya...</button>
+    <button type="button" class="btn btn-primary news-button vertical-margin">Lihat berita lainnya...</button>
   </div>
   @endsection
