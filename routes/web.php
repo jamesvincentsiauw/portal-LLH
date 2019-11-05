@@ -19,4 +19,18 @@ Route::post('/submission/track','UserController@trackSubmission');
 Route::post('/news/add','AdminController@addNews');
 Route::post('/news/edit','AdminController@editNews');
 Route::post('/news/delete','AdminController@deleteNews');
-Route::get('/tes','TesController@index');
+Route::get('/tes',function (){
+    return view('index');
+});
+Route::get('/profile',function (){
+    return view('profile');
+});
+Route::get('/news',function (){
+    return view('news');
+});
+Route::get('/forms', function (){
+    return view('form');
+});
+Route::get('/tracks',function (){
+    return view('tracking');
+});

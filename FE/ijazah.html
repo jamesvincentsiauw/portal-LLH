@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/form_style.scss">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#" style="color:white; font-weight: bold;">Portal Satu Layanan ITB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+          style="margin :2px 0;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        
+      </div>
+    </nav>
+
+  <h1 id="title-page" class="text-center">
+    Pengajuan Ijazah
+  </h1>
+
+  <div class="base-content" style="margin-top:50px;">
+
+    <div class="form-reg">
+      <label>Nama</label>
+      <input class="form-control" type="text" placeholder="cth: John Doe">
+    </div>
+    <label>NIM</label>
+    <div class="form-reg">
+      <input class="form-control" type="text" placeholder="">
+    </div>
+    <label>Nomor Telepon</label>
+    <div class="form-reg">
+      <input class="form-control" type="text" placeholder="cth: +628xxxxxxxxxx">
+    </div>
+
+    <div class="form-reg">
+      <label>Email</label>
+      <input class="form-control" type="text" placeholder="cth: john@doe.com">
+    </div>
+
+    
+      
+
+    <!-- <form method="post" class="file-uploader" action="" enctype="multipart/form-data">
+          <div class="file-uploader__message-area">
+            <p>Select a file to upload</p>
+          </div>
+          <div class="file-chooser">
+            <input class="file-chooser__input" type="file">
+          </div>
+          <input class="file-uploader__submit-button" type="submit" value="Upload">
+        </form> -->
+
+    <!-- <div id="dragndropimage" class="uploadimage-dragndrop">
+      <div class="uploadimage-text">Drag images here</div>
+      <div>Or, if you prefer...</div>
+      <div class="uploadimage-input">
+        <input type="file" multiple="multiple" name="uploadFiles" id="upload-input" />
+      </div>
+    </div>
+
+    <div id="upload-liveuploads" data-bind="template: { name: 'template-uploads' }"></div> -->
+
+    <div>
+      <label>Upload Berkas</label>
+      <div class=" upload-section ">
+          <div id="display-file">
+
+          </div>
+          <div class="upload-button" onchange="file_name_display()">
+              <input id='pict' type="file" name="myFile" accept="image/*" />
+              Browse
+          </div>
+      </div>
+  </div>
+
+
+
+
+    <button type="button" class="btn btn-primary submit-button">Submit</button>
+
+  </div>
+
+
+
+
+  
+</body>
+
+</html>
