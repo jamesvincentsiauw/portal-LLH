@@ -33,4 +33,8 @@ class HomeController extends Controller
     public function tracks(){
         return view('tracking');
     }
+    public function newsDetails($id){
+        $news = News::all()->where('id',$id)->first();
+        return view('news_detail', compact('news'));
+    }
 }

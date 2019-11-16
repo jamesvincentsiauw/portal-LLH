@@ -8,13 +8,13 @@
         @if($news->count()>0)
             <div class="row">
                 @foreach($news as $item)
-                    <div class="col-md-4 news-card-gap">
+                    <div class="col-md-4 news-card-gap" onclick="window.location.href = '/news/detail/{{$item->id}}';">
                         <div class=" news-card">
                             <a>
                                 <div class="news-img" style="background-image: url({{asset('img/img_1.jpg')}})"></div>
                                 <div class="news-info">
                                     <h4>{{$item->title}}</h4>
-                                    <p class="news-date"> {{$item->created_at}}</p>
+                                    <p class="news-date">{{$item->created_at}}</p>
                                 </div>
                             </a>
                         </div>

@@ -16,6 +16,7 @@ Route::get('/profile', 'HomeController@profile');
 Route::get('/news', 'HomeController@news');
 Route::get('/forms', 'HomeController@forms');
 Route::get('/tracks', 'HomeController@tracks');
+Route::get('news/detail/{id}', 'HomeController@newsDetails');
 //End Home Route
 
 //Start Submission Route
