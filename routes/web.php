@@ -10,27 +10,24 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Start Home Route
+Route::get('/', 'HomeController@index');
+Route::get('/profile', 'HomeController@profile');
+Route::get('/news', 'HomeController@news');
+Route::get('/forms', 'HomeController@forms');
+Route::get('/tracks', 'HomeController@tracks');
+//End Home Route
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Start Submission Route
 Route::post('/submission/add','UserController@addSubmission');
 Route::post('/submission/track','UserController@trackSubmission');
-Route::post('/news/add','AdminController@addNews');
-Route::post('/news/edit','AdminController@editNews');
-Route::post('/news/delete','AdminController@deleteNews');
-Route::get('/tes',function (){
-    return view('index');
-});
-Route::get('/profile',function (){
-    return view('profile');
-});
-Route::get('/news',function (){
-    return view('news');
-});
-Route::get('/forms', function (){
-    return view('form');
-});
-Route::get('/tracks',function (){
-    return view('tracking');
-});
+//End Submission Route
+
+//Start Admin Route
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/published', 'AdminController@publishedRegulation');
+Route::get('/admin/on-progress', 'AdminController@onProgressRegulation');
+Route::post('/admin/news/add','AdminController@addNews');
+Route::post('/admin/news/edit','AdminController@editNews');
+Route::post('/admin/news/delete','AdminController@deleteNews');
+//End Admin Route

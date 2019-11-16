@@ -23,7 +23,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="/tes" style="color:#007EA7; font-weight: bold;">Portal LLH</a>
+      <a class="navbar-brand" href="/" style="color:#007EA7; font-weight: bold;">Portal LLH</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
         style="margin :2px 0;">
@@ -33,7 +33,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="nav navbar-nav navbar-right">
           <li class="nav-item">
-            <a class="nav-link" href="/tes">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/profile">Profile</a>

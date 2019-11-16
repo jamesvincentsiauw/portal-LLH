@@ -74,7 +74,7 @@
     <div class="container main-menu">
         <div class="row card-container">
             <div class="col-sm home-main-feature has-text-centered" data-aos="fade-up">
-                <a href="form_page.html">
+                <a href="/forms">
                     <div class="text-center">
                         <img class="main-feature-img" src="{{asset('img/search.jpg')}}" alt="Image">
                     </div>
@@ -85,7 +85,7 @@
                 </a>
             </div>
             <div class="col-sm align-self-center home-main-feature has-text-centered" data-aos="fade-up">
-                <a href="track_page.html">
+                <a href="/tracks">
                     <div class="text-center">
                         <img class="main-feature-img" src="{{asset('img/search.jpg')}}" alt="Image">
                     </div>
@@ -102,19 +102,19 @@
         <div class="container ">
             <div class="row">
                 <div class="col text-center">
-                    <h1 id="statistic-1" class="gold-text">150</h1>
+                    <h1 id="statistic-1" class="gold-text">{{$sk}}</h1>
                     <h4>Pengajuan SK</h4>
                 </div>
                 <div class="col text-center">
-                    <h1 id="statistic-2" class="gold-text">80</h1>
+                    <h1 id="statistic-2" class="gold-text">{{$skpub}}</h1>
                     <h4>SK Terbit</h4>
                 </div>
                 <div class="col text-center">
-                    <h1 id="statistic-3" class="gold-text">25</h1>
+                    <h1 id="statistic-3" class="gold-text">{{$peraturan}}</h1>
                     <h4>Pengajuan Peraturan</h4>
                 </div>
                 <div class="col text-center">
-                    <h1 id="statistic-4" class="gold-text">12</h1>
+                    <h1 id="statistic-4" class="gold-text">{{$kerjasama}}</h1>
                     <h4>Pengajuan Kerjasama</h4>
                 </div>
             </div>
@@ -124,41 +124,20 @@
     <div class="container text-center" style="padding:4% 0;">
         <h1 id="title-page"><strong>Berita Terbaru</strong></h1>
         <div class="row">
+            @foreach($news as $item)
             <div class="col-md-4 news-card-gap">
                 <div class=" news-card" data-aos="fade-up">
                     <a>
                         <div class="news-img" style="background-image: url({{asset('img/img_1.jpg')}})"></div>
                         <div class="news-info">
-                            <h4>Lorem ipsum dolor sit amet sit legimus copiosae instructior ei ut vix denique fierentis ea saperet
-                                inimicu ut qui dolor oratio mnesarchum</h4>
-                            <p class="news-date"> 18 Oktober 2019</p>
+                            <h4>{{$item->title}}</h4>
+                            <p class="news-date"> {{$item->created_at}}</p>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="col-md-4 news-card-gap">
-                <div class=" news-card" data-aos="fade-up">
-                    <a>
-                        <div class="news-img" style="background-image: url({{asset('img/img_1.jpg')}})"></div>
-                        <div class="news-info">
-                            <h4>Lorem ipsum dolor sit amet sit lemnesarchum</h4>
-                            <p class="news-date"> 18 Oktober 2019</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4 news-card-gap">
-                <div class=" news-card" data-aos="fade-up">
-                    <a>
-                        <div class="news-img" style="background-image: url({{asset('img/img_1.jpg')}})"></div>
-                        <div class="news-info">
-                            <h4>Lorem ipsum dolor </h4>
-                            <p class="news-date"> 18 Oktober 2019</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
-        <button type="button" class="btn btn-primary news-button vertical-margin">Lihat berita lainnya...</button>
+        <button type="button" onclick="window.location.href = '/news';" class="btn btn-primary news-button vertical-margin">Lihat berita lainnya...</button>
     </div>
 @endsection

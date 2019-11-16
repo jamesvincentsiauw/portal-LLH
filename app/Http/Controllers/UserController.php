@@ -2,45 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SubmissionEmail;
 use App\Submission;
+use Illuminate\Support\Facades\Mail;
 use SSO\SSO;
 
 class UserController extends Controller
 {
-    private function randomID($cat){
-        $i = 0;
-        $ret=$cat;
-        while ($i<20){
-            $ret+=rand(0,9);
-        }
-        return $ret;
-    }
     public function addSubmission(){
-        SSO::check();
         try {
             if (\request()->hasFile('draft_files')) {
                 $draft_files = \request()->file('draft_files');
-                $name = '/uploads/submissions/'.SSO::getUser()->name."draft";
-                $draft_files->move($name);
+                $name = '/uploads/submissions/'.request()->name;
+                $draft_files->move(public_path($name),$draft_files->getClientOriginalName());
                 $draft_files_path = $name."/".$draft_files->getClientOriginalName();
-            }
-            if (\request()->hasFile('supporting_files')) {
-                $supporting_files = \request()->file('supporting_files');
-                $name = '/uploads/submissions/'.SSO::getUser()->name."supporting";
-                $supporting_files->move($name);
-                $supporting_files_path = $name."/".$supporting_files->getClientOriginalName();
-            }
-            $submission = new Submission();
-            $submission->id = $this->randomID("SUB");
-            $submission->submitterName = SSO::getUser()->name;
-            $submission->submitterITBmail = SSO::getUser()->ITBmail;
-            $submission->submitterWorkUnit = \request()->workUnit;
-            $submission->draft_files = $draft_files_path;
-            $submission->supporting_files = $supporting_files_path;
+                $submission = new Submission();
+                $id = 'SUB'.str_random(10);
+                $submission->id = $id;
+                $submission->type = request()->type;
+                $submission->submitterName = request()->name;
+                $submission->submitterITBmail = request()->ITBmail;
+                $submission->status = 'Reviewed';
+                $submission->submitterWorkUnit = \request()->workUnit;
+                $submission->draft_files = $draft_files_path;
+                $submission->save();
 
-            $submission->save();
+                Mail::to(request()->ITBmail)->send(new SubmissionEmail(request(),$id));
 
-            return redirect()->back()->with('success','Pengajuan Sukses. Tunggu Kabar Selanjutnya');
+                return redirect()->back()->with('success','Pengajuan Sukses. Tunggu Kabar Selanjutnya. ID pengajuan: '.$id);
+            }
+            else{
+                return redirect()->back()->with('alert','File tidak Ditemukan, Upload File!');
+            }
         }
         catch (\Exception $exception){
             return redirect()->back()->with('alert',$exception->getMessage());

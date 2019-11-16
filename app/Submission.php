@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Submission extends Model
 {
     protected $fillable = [
-        'draft_files', 'supporting_files', 'submitterName','submitterITBmail','submitterWorkUnit','status'
+        'draft_files','submitterName','submitterITBmail','submitterWorkUnit','status','id','type'
     ];
 
     public function Document(){
