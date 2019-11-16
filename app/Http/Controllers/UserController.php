@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\SubmissionEmail;
 use App\Submission;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use SSO\SSO;
 
@@ -41,16 +42,22 @@ class UserController extends Controller
     }
     public function trackSubmission($id){
         try{
-            $submission = Submission::all()->where('id',$id);
+            $submission = DB::table('submissions')->where('id',$id)->get();
             if ($submission){
-                return redirect()->back()->with('data',$submission);
+                $ret = [
+                    'id'=> $submission[0]->id,
+                    'submitterName' => $submission[0]->submitterName,
+                    'status' => $submission[0]->status,
+                    'created_at' => $submission[0]->created_at,
+                ];
+                return response()->json(['status'=>200,'results'=>$ret]);
             }
             else {
-                return redirect()->back()->with('alert', 'Data Tidak Ditemukan!');
+                return response()->json(['status'=>200,'results'=>null, 'description'=>'Data Tidak Ditemukan']);
             }
         }
         catch (\Exception $exception){
-            return redirect()->back()->with('alert',$exception);
+            return response()->json(['status'=>$exception->getCode(),'results'=>null,'description'=> $exception->getMessage()]);
         }
     }
 }

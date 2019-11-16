@@ -20,20 +20,20 @@
 
     <div id="track-result">
         <div id="track-result-id-info">
-            <p id="track-result-number">Result for ID2286</p>
+            <p id="track-result-number"></p>
             <table class="table table-striped">
               <tbody>
                 <tr>
                   <th scope="row">Nama</th>
-                  <td>Bambang</td>
+                  <td id="name"></td>
                 </tr>
                 <tr>
                   <th scope="row">Tanggal Pengajuan</th>
-                  <td>29 Januari 2019</td>
+                  <td id="tanggalMulai"></td>
                 </tr>
                 <tr>
                   <th scope="row">Tanggal Selesai</th>
-                  <td>-</td>
+                  <td id="tanggalSelesai">-</td>
                 </tr>
               </tbody>
             </table>
@@ -63,9 +63,36 @@
   </div>
   
   <script>
-    function show_result() {
-      document.getElementById("track-result").setAttribute("style","display :block;");
-      document.getElementById("track-search-bar").setAttribute("style","margin-bottom:10%");
-    }
+    // function show_result() {
+    //   document.getElementById("track-result").setAttribute("style","display :block;");
+    //   document.getElementById("track-search-bar").setAttribute("style","margin-bottom:10%");
+    // }
+      function show_result() {
+          document.getElementById("track-result").setAttribute("style","display :block;");
+          document.getElementById("track-search-bar").setAttribute("style","margin-bottom:10%");
+          var id = $('#inlineFormInputGroupUsername').val().trim();
+
+          if (id!=null){
+              fetchRecords(id);
+          }
+      }
+      function fetchRecords(id) {
+          $.ajax({
+              url: 'SOPAWUASUUW82901SSL/submission/track/'+id,
+              type: 'get',
+              dataType: 'json',
+              success: function (response) {
+                  if (response['results']!=null){
+                      $('#track-result-number').html('Result for '+response['results']['id']);
+                      $('#name').html(response['results']['submitterName']);
+                      $('#tanggalMulai').html(response['results']['created_at']);
+                  }
+                  console.log(response);
+              },
+              error: function (response) {
+                  console.log(response);
+              }
+          })
+      }
   </script>
   @endsection
