@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('id')->unique()->primary();
             $table->string('name');
             $table->string('ITBmail');
-            $table->string('itbStatus');
+            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });

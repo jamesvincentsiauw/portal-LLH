@@ -26,30 +26,34 @@
             </div>
             <label>Unit Kerja</label>
             <div class="form-reg">
-                <input class="form-control" name="workUnit" type="text" placeholder="" required>
+                <input class="form-control" name="workUnit" type="text" placeholder="PPID ITB" required>
             </div>
             <label>Email ITB</label>
             <div class="form-reg">
                 <input class="form-control" name="ITBmail" type="text" placeholder="cth: johndoe@itb.ac.id" required>
             </div>
-        <div class="form-group">
-            <label>Jenis Pengajuan</label>
-            <select name="type" class="form-control" id="sel1">
-                <option value="sk">Surat Keputusan</option>
-                <option value="peraturan">Peraturan</option>
-                <option value="kerjasama">Kerjasama</option>
-            </select>
-        </div>
-        <div>
-            <label>Upload File</label>
-            <div class=" upload-section ">
+            <label>Judul Pengajuan</label>
+            <div class="form-reg">
+                <input class="form-control" name="title" type="text" placeholder="cth: Surat Keputusan PMB" required>
+            </div>
+            <div class="form-group">
+                <label>Jenis Pengajuan</label>
+                <select name="type" class="form-control" id="sel1">
+                    <option value="sk">Surat Keputusan</option>
+                    <option value="peraturan">Peraturan</option>
+                    <option value="kerjasama">Kerjasama</option>
+                </select>
+            </div>
+            <div>
+                <label>Upload File</label>
+                <div class=" upload-section ">
 {{--                <div id="display-file"></div>--}}
 {{--                <div class="upload-button" onchange="file_name_display()">--}}
 {{--                    <input id='pict' type="file" name="draft_files" required/>Browse--}}
 {{--                </div>--}}
-                <input id='pict' type="file" name="draft_files" required/>
+                    <input id='pict' type="file" name="draft_files" required/>
+                </div>
             </div>
-        </div>
             <input type="submit" class="btn btn-primary submit-button vertical-margin">
         </div>
     </form>

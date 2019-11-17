@@ -17,9 +17,11 @@ class UserController extends Controller
                 $name = '/uploads/submissions/'.request()->name;
                 $draft_files->move(public_path($name),$draft_files->getClientOriginalName());
                 $draft_files_path = $name."/".$draft_files->getClientOriginalName();
+
                 $submission = new Submission();
                 $id = 'SUB'.str_random(10);
                 $submission->id = $id;
+                $submission->title = request()->title;
                 $submission->type = request()->type;
                 $submission->submitterName = request()->name;
                 $submission->submitterITBmail = request()->ITBmail;

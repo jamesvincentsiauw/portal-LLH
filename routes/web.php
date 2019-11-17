@@ -22,6 +22,8 @@ Route::get('news/detail/{id}', 'HomeController@newsDetails');
 //Start Submission Route
 Route::post('/submission/add','UserController@addSubmission');
 Route::get('/SOPAWUASUUW82901SSL/submission/track/{id}','UserController@trackSubmission');
+Route::post('/submission/accept/{id}','AdminController@acceptSubmission');
+Route::post('/submission/decline/{id}','AdminController@declineSubmission');
 //End Submission Route
 
 //Start Admin Route

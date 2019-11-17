@@ -11,228 +11,61 @@
                             <div class="col-lg-12">
                                 <h2 class="title-1 m-b-25">Pengajuan Permohonan Terbaru</h2>
                                 <div class="table-responsive table--no-card m-b-40">
-                                        <table class="table table-borderless table-striped table-earning">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">Tanggal</th>
-                                                        <th class="text-center">ID</th>
-                                                        <th class="text-center">Nama</th>
-                                                        <th class="text-center">Jabatan</th>
-                                                        <th class="text-center">Judul SK</th>
-                                                        <th class="text-center">Status Sekarang</th>
-                                                        <th class="text-center">Aksi</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="text-center">
-                                                    <tr>
-                                                        <td>2018-09-29 05:57</td>
-                                                        <td>100398</td>
-                                                        <td>Andi Budiman</td>
-                                                        <td>Kepala Unit Olahraga</td>
-                                                        <td>ABCD</td>
-                                                        <td>Menunggu Persetujuan Admin</td>
-                                                        <td>
-                                                            <div class="row" style="width:350px">
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">View</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">Download</button>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-success btn-sm">Accept</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger btn-sm">Decline</button>
-                                                                </div>
+                                <table class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Tanggal</th>
+                                                <th class="text-center">ID</th>
+                                                <th class="text-center">Nama</th>
+                                                <th class="text-center">Judul Pengajuan</th>
+                                                <th class="text-center">Unit Kerja</th>
+                                                <th class="text-center">Email</th>
+                                                <th class="text-center">Status Sekarang</th>
+                                                <th class="text-center">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-center">
+                                        @foreach($submissions as $item)
+                                            @if($item->status != 'Accepted')
+                                                <tr>
+                                                    <td>{{$item->created_at}}</td>
+                                                    <td>{{$item->id}}</td>
+                                                    <td>{{$item->submitterName}}</td>
+                                                    <td>{{$item->title}}</td>
+                                                    <td>{{$item->submitterWorkUnit}}</td>
+                                                    <td>{{$item->submitterITBmail}}</td>
+                                                    <td>{{$item->status}}</td>
+                                                    <td>
+                                                        <div class="row" style="width:350px">
+                                                            <div class="col">
+                                                                <a href="{{$item->draft_files}}" target="_blank" type="button"
+                                                                   class="btn btn-primary btn-sm">View</a>
+                                                                <a href="{{$item->draft_files}}" download="{{"draft_file_".$item->submitterName}}" type="button"
+                                                                   class="btn btn-primary btn-sm">Download</a>
                                                             </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2018-09-28 01:22</td>
-                                                        <td>100397</td>
-                                                        <td>Arief Namanya agak panjang</td>
-                                                        <td>Kepala Unit Fakultas</td>
-                                                        <td>ABCD</td>
-                                                        <td>Menunggu Persetujuan Admin</td>
-                                                        <td>
-                                                            <div class="row" style="width:350px">
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">View</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">Download</button>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-success btn-sm">Accept</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger btn-sm">Decline</button>
-                                                                </div>
+                                                            <div class="col">
+                                                                <form action="/submission/accept/{{$item->id}}" method="post">
+                                                                    {{csrf_field()}}
+                                                                    <input type="submit" class="btn btn-success btn-sm" value="Accept">
+                                                                </form>
+                                                                <form action="/submission/decline/{{$item->id}}" method="post" style="margin: 5px">
+                                                                    {{csrf_field()}}
+                                                                    <input type="submit" class="btn btn-danger btn-sm" value="Decline">
+                                                                </form>
                                                             </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2018-09-27 02:12</td>
-                                                        <td>100396</td>
-                                                        <td>Joko</td>
-                                                        <td>Staff Unit Lingkungan</td>
-                                                        <td>ABCD</td>
-                                                        <td>Menunggu Persetujuan Admin</td>
-                                                        <td>
-                                                            <div class="row" style="width:350px">
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">View</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">Download</button>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-success btn-sm">Accept</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger btn-sm">Decline</button>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2018-09-26 23:06</td>
-                                                        <td>100395</td>
-                                                        <td>Agus</td>
-                                                        <td>Staff Unit Kesehatan</td>
-                                                        <td>ABCD</td>
-                                                        <td>Menunggu Persetujuan Admin</td>
-                                                        <td>
-                                                            <div class="row" style="width:350px">
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">View</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">Download</button>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-success btn-sm">Accept</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger btn-sm">Decline</button>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2018-09-25 19:03</td>
-                                                        <td>100393</td>
-                                                        <td>Bambang</td>
-                                                        <td>Staff Unit Keuangan</td>
-                                                        <td>ABCD</td>
-                                                        <td>Menunggu Persetujuan Admin</td>
-                                                        <td>
-                                                            <div class="row" style="width:350px">
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">View</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">Download</button>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-success btn-sm">Accept</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger btn-sm">Decline</button>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2018-09-29 05:57</td>
-                                                        <td>100392</td>
-                                                        <td>Meti</td>
-                                                        <td>Kepala Unit Sarana Prasarana</td>
-                                                        <td>ABCD</td>
-                                                        <td>Menunggu Persetujuan Admin</td>
-                                                        <td>
-                                                            <div class="row" style="width:350px">
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">View</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">Download</button>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-success btn-sm">Accept</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger btn-sm">Decline</button>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2018-09-24 19:10</td>
-                                                        <td>100391</td>
-                                                        <td>Budi</td>
-                                                        <td>Warga ITB</td>
-                                                        <td>ABCD</td>
-                                                        <td>Menunggu Persetujuan Admin</td>
-                                                        <td>
-                                                            <div class="row" style="width:350px">
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">View</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">Download</button>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-success btn-sm">Accept</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger btn-sm">Decline</button>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2018-09-22 00:43</td>
-                                                        <td>100393</td>
-                                                        <td>Susanto</td>
-                                                        <td>Staff Unit Konsumsi</td>
-                                                        <td>ABCD</td>
-                                                        <td>Menunggu Persetujuan Admin</td>
-                                                        <td>
-                                                            <div class="row" style="width:350px">
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">View</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-primary btn-sm">Download</button>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <button type="button"
-                                                                        class="btn btn-success btn-sm">Accept</button>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger btn-sm">Decline</button>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                                 <nav aria-label="Page navigation example" style="margin:20px 0 50px">
-                                        <ul class="pagination justify-content-center">
-                                            <li class="page-item disabled">
-                                                <a class="page-link" href="#" tabindex="-1"
-                                                    aria-disabled="true">Previous</a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="#">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                                    <ul class="pagination justify-content-center">
+                                        {{$submissions->links()}}
+                                    </ul>
+                                </nav>
                             </div>
 
                         </div>

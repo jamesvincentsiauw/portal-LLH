@@ -15,147 +15,40 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">No</th>
-                                                <th scope="col">Nomor SK</th>
+                                                <th scope="col">Nomor Regulasi</th>
                                                 <th scope="col">Judul</th>
+                                                <th scope="col">Tanggal Rilis</th>
                                                 <th scope="col" style="width:110px">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($submissions as $item)
+                                            <?php
+                                                $i=1
+                                            ?>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td style="width:40px">2019/08</td>
-                                                <td>SK akademik</td>
+                                                <th scope="row">{{$i}}</th>
+                                                <td style="width:40px">{{$item->id}}</td>
+                                                <td>{{$item->title}}</td>
+                                                <td>{{$item->created_at}}</td>
                                                 <td>
                                                     <div class="row">
                                                         <div class="col">
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">View</button>
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">Download</button>
+                                                            <a href="{{$item->files}}" target="_blank" type="button"
+                                                               class="btn btn-primary btn-sm">View</a>
+                                                            <a href="{{$item->files}}" download="{{"File_".$item->title}}" type="button"
+                                                               class="btn btn-primary btn-sm">Download</a>
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>2019/XX/08</td>
-                                                <td>sk wisuda via annex</td>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">View</button>
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">Download</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>2019/XXXX</td>
-                                                <td>sk tempat makan</td>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">View</button>
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">Download</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">4</th>
-                                                <td>2019/XXXX</td>
-                                                <td>sk tempat makan</td>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">View</button>
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">Download</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">5</th>
-                                                <td>2019/XXXX</td>
-                                                <td>sk tempat makan</td>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">View</button>
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">Download</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">6</th>
-                                                <td>2019/XXXX</td>
-                                                <td>sk tempat makan</td>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">View</button>
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">Download</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">7</th>
-                                                <td>2019/XXXX</td>
-                                                <td>sk tempat makan</td>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">View</button>
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">Download</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">8</th>
-                                                <td>2019/XXXX</td>
-                                                <td>sk tempat makan</td>
-                                                <td>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">View</button>
-                                                            <button type="button"
-                                                                class="btn btn-primary btn-sm">Download</button>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
                                 <nav aria-label="Page navigation example" style="margin:20px 0 50px">
                                     <ul class="pagination justify-content-center">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1"
-                                                aria-disabled="true">Previous</a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">Next</a>
-                                        </li>
+                                        {{$submissions->links()}}
                                     </ul>
                                 </nav>
                             </div>
