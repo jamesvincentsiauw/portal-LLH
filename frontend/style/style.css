@@ -37,6 +37,10 @@ a:hover{
     cursor: pointer;
 }
 
+textarea {
+    resize:none;
+}
+
 
 .header-text{
     color: white;
