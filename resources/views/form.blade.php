@@ -22,23 +22,23 @@
         <div class="base-content" style="margin-top:50px;">
             <div class="form-reg">
                 <label>Nama</label>
-                <input class="form-control" name="name" type="text" placeholder="cth: John Doe" required>
+                <input class="form-control" name="name" type="text" placeholder="cth: John Doe" value="{{old('name')}}" required>
             </div>
             <label>Unit Kerja</label>
             <div class="form-reg">
-                <input class="form-control" name="workUnit" type="text" placeholder="PPID ITB" required>
+                <input class="form-control" name="workUnit" type="text" placeholder="PPID ITB" value="{{old('workunit')}}" required>
             </div>
             <label>Email ITB</label>
             <div class="form-reg">
-                <input class="form-control" name="ITBmail" type="text" placeholder="cth: johndoe@itb.ac.id" required>
+                <input class="form-control" name="ITBmail" type="text" placeholder="cth: johndoe@itb.ac.id" value="{{old('ITBmail')}}" required>
             </div>
             <label>Judul Pengajuan</label>
             <div class="form-reg">
-                <input class="form-control" name="title" type="text" placeholder="cth: Surat Keputusan PMB" required>
+                <input class="form-control" name="title" type="text" placeholder="cth: Surat Keputusan PMB" value="{{old('title')}}" required>
             </div>
             <div class="form-group">
                 <label>Jenis Pengajuan</label>
-                <select name="type" class="form-control" id="sel1">
+                <select name="type" class="form-control" id="sel1" value="{{old('type')}}">
                     <option value="sk">Surat Keputusan</option>
                     <option value="peraturan">Peraturan</option>
                     <option value="kerjasama">Kerjasama</option>
@@ -47,11 +47,7 @@
             <div>
                 <label>Upload File</label>
                 <div class=" upload-section ">
-{{--                <div id="display-file"></div>--}}
-{{--                <div class="upload-button" onchange="file_name_display()">--}}
-{{--                    <input id='pict' type="file" name="draft_files" required/>Browse--}}
-{{--                </div>--}}
-                    <input id='pict' type="file" name="draft_files" required/>
+                    <input id='pict' type="file" name="draft_files" value="{{old('draft_files')}}" required/>
                 </div>
             </div>
             <input type="submit" class="btn btn-primary submit-button vertical-margin">

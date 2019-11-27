@@ -77,6 +77,7 @@
                                             <tr>
                                                 <th class="text-center">Tanggal</th>
                                                 <th class="text-center">ID</th>
+                                                <th class="text-center">Tipe Regulasi</th>
                                                 <th class="text-center">Nama</th>
                                                 <th class="text-center">Judul Pengajuan</th>
                                                 <th class="text-center">Unit Kerja</th>
@@ -91,11 +92,29 @@
                                                     <tr>
                                                         <td>{{$item->created_at->format('d-M-Y')}}</td>
                                                         <td>{{$item->id}}</td>
+                                                        <td>{{$item->type}}</td>
                                                         <td>{{$item->submitterName}}</td>
                                                         <td>{{$item->title}}</td>
                                                         <td>{{$item->submitterWorkUnit}}</td>
                                                         <td>{{$item->submitterITBmail}}</td>
-                                                        <td>{{$item->status}}</td>
+                                                        <td>
+                                                            <form action="/submission/change/{{$item->id}}" method="post">
+                                                                {{csrf_field()}}
+                                                                <select name="status" onchange="this.form.submit()">
+                                                                    <option value="{{$item->status}}">{{$item->status}}</option>
+                                                                    @if($item->status == 'Reviewed')
+                                                                        <option value="Paraf UKA/UKP">Paraf UKA/UKP</option>
+                                                                        <option value="Rektorat">Rektorat</option>
+                                                                    @elseif($item->status == 'Paraf UKA/UKP')
+                                                                        <option value="Reviewed">Reviewed</option>
+                                                                        <option value="Rektorat">Rektorat</option>
+                                                                    @elseif($item->status == 'Rektorat')
+                                                                        <option value="Reviewed">Reviewed</option>
+                                                                        <option value="Paraf UKA/UKP">Paraf UKA/UKP</option>
+                                                                    @endif
+                                                                </select>
+                                                            </form>
+                                                        </td>
                                                         <td>
                                                             <div class="row" style="width:350px">
                                                                 <div class="col">
@@ -105,18 +124,12 @@
                                                                         class="btn btn-primary btn-sm">Download</a>
                                                                 </div>
                                                                 <div class="col">
-                                                                    <form action="/submission/accept/{{$item->id}}" method="post">
-                                                                        {{csrf_field()}}
-                                                                        <input type="submit" class="btn btn-success btn-sm" value="Accept">
-                                                                    </form>
+                                                                    <button type="button" onclick="window.location.href='/submission/accept/{{$item->id}}'"
+                                                                            class="btn btn-success btn-sm">Accept</button>
                                                                     <form action="/submission/decline/{{$item->id}}" method="post" style="margin: 5px">
                                                                         {{csrf_field()}}
                                                                         <input type="submit" class="btn btn-danger btn-sm" value="Decline">
                                                                     </form>
-{{--                                                                    <button type="button" onclick="accept({{$item->id}})"--}}
-{{--                                                                        class="btn btn-success btn-sm">Accept</button>--}}
-{{--                                                                    <button type="button" onclick="decline({{$item->id}})"--}}
-{{--                                                                        class="btn btn-danger btn-sm">Decline</button>--}}
                                                                 </div>
                                                             </div>
                                                         </td>

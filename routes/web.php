@@ -16,14 +16,17 @@ Route::get('/profile', 'HomeController@profile');
 Route::get('/news', 'HomeController@news');
 Route::get('/forms', 'HomeController@forms');
 Route::get('/tracks', 'HomeController@tracks');
-Route::get('news/detail/{id}', 'HomeController@newsDetails');
+Route::get('/news/detail/{id}', 'HomeController@newsDetails');
+Route::get('/search', 'HomeController@search');
 //End Home Route
 
 //Start Submission Route
 Route::post('/submission/add','UserController@addSubmission');
 Route::get('/SOPAWUASUUW82901SSL/submission/track/{id}','UserController@trackSubmission');
+Route::get('/submission/accept/{id}','AdminController@showAcceptanceForm');
 Route::post('/submission/accept/{id}','AdminController@acceptSubmission');
 Route::post('/submission/decline/{id}','AdminController@declineSubmission');
+Route::post('/submission/change/{id}', 'AdminController@changeProgress');
 //End Submission Route
 
 //Start Admin Route

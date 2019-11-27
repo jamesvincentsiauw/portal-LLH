@@ -51,16 +51,15 @@
                     Pencarian SK
                 </div>
                 <div class="col-md-9">
-
-                    <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Pencarian">
-                        <div class="input-group-append">
-                            <div class="input-group-text search-button" onclick="window.location.href = 'search_result.html';">
-                                <a class="fas fa-search"></a>
+                    <form action="/search">
+                        <div class="input-group">
+                            <input type="text" name="keyword" class="form-control" id="inlineFormInputGroupUsername" placeholder="Pencarian" required>
+                            <div class="input-group-append" style="background: white">
+                                <button id="button-addon1"class="btn btn-link text-primary"><i
+                                            class="fa fa-search"></i></button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
 
             </div>

@@ -58,20 +58,20 @@ class AdminController extends Controller
             return redirect()->back()->with('alert',$exception->getMessage());
         }
     }
-    public function changeProgress($id,$progress){
+    public function changeProgress($id){
         try{
-            Submission::all()->where('id',$id)->update([
-                'status' => $progress
+            Submission::all()->where('id',$id)->first()->update([
+                'status' => \request()->status
             ]);
-            $ret = [
-                'status' => 201,
-                'description' => 'Status Updated'
-            ];
-            return response()->json($ret);
+            return redirect()->back()->with('success','Berhasil mengubah status');
         }
         catch (Exception $exception){
-            return response()->json(['status'=> $exception->getCode(), 'description'=> $exception->getMessage()]);
+            return redirect()->back()->with('alert',$exception->getMessage());
         }
+    }
+    public function showAcceptanceForm($id){
+        $submission = Submission::all()->where('id',$id)->first();
+        return view('admin.acceptanceForm', compact('submission'));
     }
     public function acceptSubmission($id){
         try{
@@ -79,13 +79,19 @@ class AdminController extends Controller
             $submission->update([
                 'status' => 'Accepted'
             ]);
+            $document = \request()->file('document');
+            $name = '/documents/'.$submission->type;
+            $document->move(public_path($name),$document->getClientOriginalName());
+            $file_path = $name."/".$document->getClientOriginalName();
+
             $documents = new Document();
             $documents->id = 'SK'.str_random(10);
             $documents->submissionID = $id;
             $documents->title=$submission->title;
-            $documents->files='TBD';
+            $document->type = $submission->type;
+            $documents->files=$file_path;
             $documents->save();
-            return redirect()->back()->with('success', 'Data '.$id.' Diterima');
+            return redirect('/admin')->with('success', 'Data '.$id.' Diterima');
         }
         catch (Exception $exception){
             return redirect()->back()->with('alert', $exception->getMessage());

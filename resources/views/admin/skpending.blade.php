@@ -4,9 +4,20 @@
 <!-- MAIN CONTENT-->
 <div class="main-content">
                 <div class="section__content section__content--p30">
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success alert-block center-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @endif
+
+                    @if ($message = Session::get('alert'))
+                        <div class="alert alert-danger alert-block">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @endif
                     <div class="container-fluid">
-
-
                         <div class="row">
                             <div class="col-lg-12">
                                 <h2 class="title-1 m-b-25">Pengajuan Permohonan Terbaru</h2>
@@ -16,6 +27,7 @@
                                             <tr>
                                                 <th class="text-center">Tanggal</th>
                                                 <th class="text-center">ID</th>
+                                                <th class="text-center">Tipe Regulasi</th>
                                                 <th class="text-center">Nama</th>
                                                 <th class="text-center">Judul Pengajuan</th>
                                                 <th class="text-center">Unit Kerja</th>
@@ -29,12 +41,30 @@
                                             @if($item->status != 'Accepted')
                                                 <tr>
                                                     <td>{{$item->created_at}}</td>
-                                                    <td>{{$item->id}}</td>
+                                                    <td id="itemID">{{$item->id}}</td>
+                                                    <td>{{$item->type}}</td>
                                                     <td>{{$item->submitterName}}</td>
                                                     <td>{{$item->title}}</td>
                                                     <td>{{$item->submitterWorkUnit}}</td>
                                                     <td>{{$item->submitterITBmail}}</td>
-                                                    <td>{{$item->status}}</td>
+                                                    <td>
+                                                        <form action="/submission/change/{{$item->id}}" method="post">
+                                                            {{csrf_field()}}
+                                                            <select name="status" onchange="this.form.submit()">
+                                                                <option value="{{$item->status}}">{{$item->status}}</option>
+                                                                @if($item->status == 'Reviewed')
+                                                                    <option value="Paraf UKA/UKP">Paraf UKA/UKP</option>
+                                                                    <option value="Rektorat">Rektorat</option>
+                                                                @elseif($item->status == 'Paraf UKA/UKP')
+                                                                    <option value="Reviewed">Reviewed</option>
+                                                                    <option value="Rektorat">Rektorat</option>
+                                                                @elseif($item->status == 'Rektorat')
+                                                                    <option value="Reviewed">Reviewed</option>
+                                                                    <option value="Paraf UKA/UKP">Paraf UKA/UKP</option>
+                                                                @endif
+                                                            </select>
+                                                        </form>
+                                                    </td>
                                                     <td>
                                                         <div class="row" style="width:350px">
                                                             <div class="col">
@@ -44,10 +74,8 @@
                                                                    class="btn btn-primary btn-sm">Download</a>
                                                             </div>
                                                             <div class="col">
-                                                                <form action="/submission/accept/{{$item->id}}" method="post">
-                                                                    {{csrf_field()}}
-                                                                    <input type="submit" class="btn btn-success btn-sm" value="Accept">
-                                                                </form>
+                                                                <button type="button" onclick="window.location.href='/submission/accept/{{$item->id}}'"
+                                                                        class="btn btn-success btn-sm">Accept</button>
                                                                 <form action="/submission/decline/{{$item->id}}" method="post" style="margin: 5px">
                                                                     {{csrf_field()}}
                                                                     <input type="submit" class="btn btn-danger btn-sm" value="Decline">
@@ -74,4 +102,4 @@
                 </div>
             </div>
             <!-- END MAIN CONTENT-->
-  @endsection
+@endsection

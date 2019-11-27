@@ -35,28 +35,15 @@
                   <th scope="row">Tanggal Selesai</th>
                   <td id="tanggalSelesai">-</td>
                 </tr>
+                <tr>
+                    <th scope="row">Status Saat Ini</th>
+                    <td id="status">-</td>
+                </tr>
               </tbody>
             </table>
           </div>
       
         <div id="track-result-container">
-      
-          <ul class="progress-indicator">
-            <li class="info">
-              <span class="bubble"></span> Review Permohonan
-            </li>
-            <li class="info">
-              <span class="bubble"></span> Paraf UKA/UKP
-            </li>
-      
-            <li>
-              <span class="bubble"></span> Rektorat
-            </li>
-            <li>
-              <span class="bubble"></span> Permohonan Selesai
-            </li>
-          </ul>
-      
         </div>
     </div>
  
@@ -86,6 +73,22 @@
                       $('#track-result-number').html('Result for '+response['results']['id']);
                       $('#name').html(response['results']['submitterName']);
                       $('#tanggalMulai').html(response['results']['created_at']);
+                      $('#status').html(response['results']['status']);
+                      if (response['results']['status'] === 'Reviewed'){
+                          $('#track-result-container').html('<center><img src="{{asset('img/1.png')}}"></center>')
+                      }
+                      else if (response['results']['status'] === 'Paraf UKA/UKP'){
+                          $('#track-result-container').html('<center><img src="{{asset('img/2.png')}}"></center>')
+                      }
+                      else if (response['results']['status'] === 'Rektorat'){
+                          $('#track-result-container').html('<center><img src="{{asset('img/3.png')}}"></center>')
+                      }
+                      else if (response['results']['status'] === 'Accepted'){
+                          $('#track-result-container').html('<center><img src="{{asset('img/4.png')}}"></center>')
+                      }
+                      else if (response['results']['status'] === 'Declined'){
+                          $('#track-result-container').html('<center><h2><strong>Permohonan DITOLAK!</strong></h2></center>')
+                      }
                   }
                   console.log(response);
               },

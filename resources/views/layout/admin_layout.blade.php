@@ -81,8 +81,8 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active">
-                            <a class="js-arrow" href="/admin">
+                        <li>
+                            <a href="/admin">
                                 <i class="fas fa-home"></i>Dashboard</a>
                         </li>
                         <li>
@@ -229,23 +229,23 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{asset('img/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                            <img src="{{asset('img/anon.png')}}" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#">Admin LLH</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{asset('img/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                                        <img src="{{asset('img/anon.png')}}" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="#">Admin LLH</a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email">admin@llh.itb.ac.id</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">

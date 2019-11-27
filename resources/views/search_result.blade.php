@@ -1,4 +1,4 @@
-@extends('layouts.home_layout')
+@extends('layout.home_layout')
 
 @section('content')
 <h1 id="title-page" class="text-center">
@@ -16,8 +16,8 @@
     </div>
   </div>
   </div>
-
   <div id="search-result" class="container table-responsive">
+    <h2 class="justify-content-center"><strong class="text-danger">{{$documents->count()}}</strong> results were found</h2>
     <table class="table table-striped text-center">
       <thead>
         <tr>
@@ -28,48 +28,25 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td style="width:40px">2019/08</td>
-          <td>SK akademik</td>
-          <td>
-            <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
-                  data-target="#myModal">View</button>
-                <button type="button" class="btn btn-primary btn-sm">Download</button>
+      <?php $i = 1 ?>
+        @foreach($documents as $item)
+          <tr>
+            <th scope="row">{{$i}}</th>
+            <td style="width:40px">{{$item->id}}</td>
+            <td>{{$item->title}}</td>
+            <td>
+              <div class="row">
+                <div class="col">
+{{--                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"--}}
+{{--                    data-target="#myModal">View</button>--}}
+{{--                  <button type="button" class="btn btn-primary btn-sm">Download</button>--}}
+                  <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='{{$item->files}}'">View</button>
+                </div>
               </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>2019/XX/08</td>
-          <td>sk wisuda via annex</td>
-          <td>
-            <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
-                  data-target="#myModal">View</button>
-                <button type="button" class="btn btn-primary btn-sm">Download</button>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>2019/XXXX</td>
-          <td>sk tempat makan</td>
-          <td>
-            <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
-                  data-target="#myModal">View</button>
-                <button type="button" class="btn btn-primary btn-sm">Download</button>
-              </div>
-            </div>
-          </td>
-        </tr>
+            </td>
+          </tr>
+          <?php $i++ ?>
+        @endforeach
       </tbody>
     </table>
 
@@ -91,13 +68,13 @@
   
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog" style="overflow: hidden;">
+{{--  <div class="modal fade" id="myModal" role="dialog" style="overflow: hidden;">--}}
 
-      <!-- Modal content-->
-      <object data="https://pdfobject.com/pdf/sample-3pp.pdf#page=2" type="application/not-a-pee-dee-eff-type" width="100%" height="100%" style="padding: 0px; display: inline-block;">
-        <iframe src="chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/content/web/viewer.html?file=https%3A%2F%2Fpdfobject.com%2Fpdf%2Fsample-3pp.pdf#page=2" style="background: none; border: none; box-shadow: none; float: none; display: block; height: 100%; margin: 0px; max-height: none; max-width: none; position: static; transform: none; visibility: visible; width: 100%;"></iframe>
-      </object>
+{{--      <!-- Modal content-->--}}
+{{--      <object data="https://pdfobject.com/pdf/sample-3pp.pdf#page=2" type="application/not-a-pee-dee-eff-type" width="100%" height="100%" style="padding: 0px; display: inline-block;">--}}
+{{--        <iframe src="chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/content/web/viewer.html?file=https%3A%2F%2Fpdfobject.com%2Fpdf%2Fsample-3pp.pdf#page=2" style="background: none; border: none; box-shadow: none; float: none; display: block; height: 100%; margin: 0px; max-height: none; max-width: none; position: static; transform: none; visibility: visible; width: 100%;"></iframe>--}}
+{{--      </object>--}}
 
-  </div>
+{{--  </div>--}}
   @endsection
   

@@ -17,6 +17,7 @@ class CreateDocumentsTable extends Migration
             $table->string('id')->unique()->primary();
             $table->string('submissionID');
             $table->string('title');
+            $table->string('type');
             $table->string('files');
             $table->timestamps();
 

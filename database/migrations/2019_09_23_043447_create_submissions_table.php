@@ -18,7 +18,6 @@ class CreateSubmissionsTable extends Migration
             $table->string('title');
             $table->string('type')->comment('SK/peraturan/kerjasama');
             $table->string('draft_files')->comment('draft pendukung dari pengajuan');
-            $table->string('supporting_files')->comment('dokumen pendukung lain, ZIP file');
             $table->string('submitterName');
             $table->string('submitterITBmail');
             $table->string('submitterWorkUnit');

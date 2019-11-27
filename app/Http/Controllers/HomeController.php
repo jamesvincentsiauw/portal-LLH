@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Document;
 use App\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -11,7 +12,7 @@ class HomeController extends Controller
     public function index(){
         $news = News::all()->take(3);
         $submissions= \App\Submission::all();
-        $skpub= DB::table('submissions')->join('documents','submissions.id','=','documents.id')->where('type','sk')->count();
+        $skpub= DB::table('submissions')->join('documents','submissions.id','=','documents.id')->where('submissions.type','sk')->count();
         return view('index')->with([
             'news'=>$news,
             'sk'=>$submissions->where('type','=','sk')->count(),
@@ -36,5 +37,10 @@ class HomeController extends Controller
     public function newsDetails($id){
         $news = News::all()->where('id',$id)->first();
         return view('news_detail', compact('news'));
+    }
+    public function search(){
+        $keyword = \request()->get('keyword');
+        $documents = Document::all()->where('title','LIKE','%'.$keyword.'%');
+        return view('search_result', compact('documents'));
     }
 }
