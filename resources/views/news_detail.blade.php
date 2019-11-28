@@ -13,10 +13,9 @@
             <div class="text-center">
                 <img src="{{asset('img/image.jpg')}}" style="width:100%">
             </div>
+            <p class="news-info">
+                {{$news->body}}
+            </p>
         </div>
-
-        <p class="news-info">
-            {{$news->body}}
-        </p>
     </div>
 @endsection
