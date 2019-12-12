@@ -30,10 +30,13 @@ Route::post('/submission/change/{id}', 'AdminController@changeProgress');
 //End Submission Route
 
 //Start Admin Route
-Route::get('/admin', 'AdminController@index');
-Route::get('/admin/published', 'AdminController@publishedRegulation');
-Route::get('/admin/on-progress', 'AdminController@onProgressRegulation');
-Route::post('/admin/news/add','AdminController@addNews');
-Route::post('/admin/news/edit','AdminController@editNews');
-Route::post('/admin/news/delete','AdminController@deleteNews');
+Route::get('/admin', 'AdminController@index')->middleware('admin');
+Route::post('/admin/login', 'AdminController@loginAdmin');
+Route::get('/admin/login', 'AdminController@showLoginForm');
+Route::post('/admin/logout', 'AdminController@logout');
+Route::get('/admin/published', 'AdminController@publishedRegulation')->middleware('admin');
+Route::get('/admin/on-progress', 'AdminController@onProgressRegulation')->middleware('admin');
+Route::post('/admin/news/add','AdminController@addNews')->middleware('admin');
+Route::post('/admin/news/edit','AdminController@editNews')->middleware('admin');
+Route::post('/admin/news/delete','AdminController@deleteNews')->middleware('admin');
 //End Admin Route

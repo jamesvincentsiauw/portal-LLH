@@ -32,17 +32,17 @@
             <div class="form-reg">
                 <input class="form-control" name="ITBmail" type="text" placeholder="cth: johndoe@itb.ac.id" value="{{old('ITBmail')}}" required>
             </div>
-            <label>Judul Pengajuan</label>
-            <div class="form-reg">
-                <input class="form-control" name="title" type="text" placeholder="cth: Surat Keputusan PMB" value="{{old('title')}}" required>
-            </div>
             <div class="form-group">
                 <label>Jenis Pengajuan</label>
                 <select name="type" class="form-control" id="sel1" value="{{old('type')}}">
                     <option value="sk">Surat Keputusan</option>
                     <option value="peraturan">Peraturan</option>
-                    <option value="kerjasama">Kerjasama</option>
+                    <option value="kerjasama">Kerja Sama</option>
                 </select>
+            </div>
+            <div class="form-group">
+                <label>Judul Keputusan/Peraturan/Kerja Sama</label>
+                <input class="form-control" name="title" type="text" placeholder="cth: Surat Keputusan PMB" value="{{old('title')}}" required>
             </div>
             <div>
                 <label>Upload File</label>

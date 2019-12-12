@@ -40,7 +40,7 @@ class HomeController extends Controller
     }
     public function search(){
         $keyword = \request()->get('keyword');
-        $documents = Document::all()->where('title','LIKE','%'.$keyword.'%');
+        $documents = DB::table('documents')->where('title','LIKE','%'.$keyword.'%')->get();
         return view('search_result', compact('documents'));
     }
 }

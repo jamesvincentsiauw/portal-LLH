@@ -37,10 +37,10 @@
             <td>
               <div class="row">
                 <div class="col">
-{{--                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"--}}
-{{--                    data-target="#myModal">View</button>--}}
-{{--                  <button type="button" class="btn btn-primary btn-sm">Download</button>--}}
-                  <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='{{$item->files}}'">View</button>
+                  <a href="{{$item->files}}" target="_blank" type="button"
+                     class="btn btn-primary btn-sm">View</a>
+                  <a href="{{$item->files}}" download="{{"FILE_".$item->title}}" type="button"
+                     class="btn btn-primary btn-sm">Download</a>
                 </div>
               </div>
             </td>
