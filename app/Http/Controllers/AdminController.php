@@ -6,6 +6,8 @@ use App\Document;
 use App\News;
 use App\Submission;
 use ConsoleTVs\Charts\Facades\Charts;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use function GuzzleHttp\Psr7\str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -25,6 +27,24 @@ class AdminController extends Controller
             ->colors(['#258b96', '#a36942', '#f4d953']);
 
         return view('admin.index_dashboard', compact('submissions','chart'));
+    }
+    public function showLoginForm(){
+        return view('admin.login');
+    }
+    public function loginAdmin(){
+        $password ="LLHITB1920";
+        if ($password == \request('password')){
+            Session::put('name', 'Admin LLH');
+            Session::put('admin', true);
+            return redirect('/admin');
+        }
+        else{
+            return redirect()->back()->with('alert', 'Maaf, Password Anda Salah!');
+        }
+    }
+    public function logout(){
+        \request()->session()->flush();
+        return redirect('/');
     }
     public function publishedRegulation(){
         $submissions = DB::table('documents')->paginate(20);
