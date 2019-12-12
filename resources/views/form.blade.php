@@ -46,8 +46,9 @@
             </div>
             <div>
                 <label>Upload File</label>
+                <a style="font-size: 5px; color: red" class="font-weight-bold alert">PLEASE UPLOAD .ZIP FILES</a>
                 <div class=" upload-section ">
-                    <input id='pict' type="file" name="draft_files" value="{{old('draft_files')}}" required/>
+                    <input id='pict' type="file" name="draft_files" accept="application/zip" value="{{old('draft_files')}}" required/>
                 </div>
             </div>
             <input type="submit" class="btn btn-primary submit-button vertical-margin">

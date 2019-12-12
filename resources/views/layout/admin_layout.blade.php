@@ -54,7 +54,7 @@
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                         <ul class="list-unstyled navbar__list">
-                                <li class="active">
+                                <li>
                                     <a class="js-arrow" href="/admin">
                                         <i class="fas fa-home"></i>Dashboard</a>
                                 </li>
@@ -66,7 +66,10 @@
                                     <a href="/admin/on-progress">
                                         <i class="fas fa-chart-bar"></i>On-Progress Regulations</a>
                                 </li>
-        
+                                <li>
+                                    <a href="/admin/news">
+                                        <i class="fas fa-chart-bar"></i>News</a>
+                                </li>
                             </ul>
                 </div>
             </nav>
@@ -93,6 +96,10 @@
                             <a href="/admin/on-progress">
                                 <i class="fas fa-chart-bar"></i>On-Progress Regulations</a>
                         </li>
+                        <li>
+                            <a href="/admin/news">
+                                <i class="fas fa-newspaper"></i>News</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -106,13 +113,15 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header"></form>
+                            <form class="form-header">
+                                @yield('title')
+                            </form>
                             <div class="header-button">
                                 <div class="noti-wrap">
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{asset('img/anon.png')}}" alt="John Doe" />
+                                            <img src="{{asset('img/anon.png')}}" alt="Admin LLH" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">Admin LLH</a>
@@ -121,7 +130,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a>
-                                                        <img src="{{asset('img/anon.png')}}" alt="John Doe" />
+                                                        <img src="{{asset('img/anon.png')}}" alt="Admin LLH" />
                                                     </a>
                                                 </div>
                                                 <div class="content">

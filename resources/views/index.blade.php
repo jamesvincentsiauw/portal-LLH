@@ -127,7 +127,7 @@
             <div class="col-md-4 news-card-gap" onclick="window.location.href = '/news/detail/{{$item->id}}';">
                 <div class=" news-card" data-aos="fade-up">
                     <a>
-                        <div class="news-img" style="background-image: url({{asset('img/img_1.jpg')}})"></div>
+                        <div class="news-img" style="background-image: url({{$item->image}})"></div>
                         <div class="news-info">
                             <h4>{{$item->title}}</h4>
                             <p class="news-date"> {{$item->created_at->format('d-M-Y')}}</p>
