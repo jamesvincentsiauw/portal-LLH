@@ -1,12 +1,12 @@
 @extends('layout.admin_layout')
 @section('title')
     <h1 id="title-page" class="text-center">
-        Penerimaan Permohonan Regulasi
+        Penyebaran Berita
     </h1>
 @endsection
 @section('content')
     <h1 id="title-page" class="text-center" style="color: transparent">
-        Pengajuan Regulasi
+        Penyebaran Berita
     </h1>
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block center-block">
@@ -22,30 +22,25 @@
         </div>
     @endif
     <div class="card container justify-content-center">
-        <form action="/submission/accept/{{$submission->id}}" method="POST" enctype="multipart/form-data">
+        <form action="/admin/news/add" method="POST" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="base-content" style="margin-top:50px;">
                 <div class="form-group">
-                    <label>ID Pengajuan</label>
-                    <input class="form-control" name="submissionID" type="text" value="{{$submission->id}}" disabled>
+                    <label>Judul Berita</label>
+                    <input class="form-control" name="title" type="text" required>
                 </div>
                 <div class="form-group">
-                    <label>Nama Pengaju</label>
-                    <input class="form-control" name="submitterName" type="text" value="{{$submission->submitterName}}" disabled>
+                    <label>Konten</label>
+                    <input class="form-control" name="body" type="text" required>
                 </div>
                 <div class="form-group">
-                    <label>Email Pengaju</label>
-                    <input class="form-control" name="ITBmail" type="text" value="{{$submission->submitterITBmail}}" disabled>
+                    <label>Penulis</label>
+                    <input class="form-control" name="author" type="text" value="Admin Lembaga Layanan Hukum ITB" disabled>
                 </div>
                 <div class="form-group">
-                    <label>Judul Pengajuan</label>
-                    <input class="form-control" name="title" type="text" value="{{$submission->title}}" disabled>
-                </div>
-                <div class="form-group">
-                    <label>Upload File</label>
-                    <a style="font-size: 5px; color: red" class="font-weight-bold alert">PLEASE UPLOAD .PDF FILES</a>
+                    <label>Upload Gambar Pendukung</label>
                     <div class=" upload-section ">
-                        <input class="form-control-file" id='pict' type="file" accept="application/pdf" name="document" value="{{old('document')}}" required/>
+                        <input class="form-control-file" id='pict' type="file" name="image" value="{{old('document')}}"/>
                     </div>
                 </div>
                 <div class="form-group">

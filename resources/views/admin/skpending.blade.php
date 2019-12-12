@@ -1,5 +1,4 @@
 @extends('layout.admin_layout')
-
 @section('content')
 <!-- MAIN CONTENT-->
 <div class="main-content">

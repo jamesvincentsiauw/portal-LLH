@@ -54,25 +54,37 @@ class AdminController extends Controller
         $submissions = DB::table('submissions')->paginate(20);
         return view('admin.skpending', compact('submissions'));
     }
+    public function showNews(){
+        $news = DB::table('news')->paginate(20);
+        return view('admin.adminNews', compact('news'));
+    }
+    public function addNewsForm(){
+        return view('admin.addNews');
+    }
     public function addNews(){
         try {
-            if (\request()->hasFile('image')) {
-                $image = \request()->file('image');
-                $name = '/uploads/admin/news';
-                $image->move(public_path($name), $image->getClientOriginalName());
-                $image_files_path = $name . "/" . $image->getClientOriginalName();
+            $image = \request()->file('image');
+            $name = '/uploads/admin/news';
+            $image->move(public_path($name), $image->getClientOriginalName());
+            $image_files_path = $name . "/" . $image->getClientOriginalName();
 
-                $news = new News();
-                $news->id = 'NEWS' . str_random(20);
-                $news->image = $image_files_path;
-                $news->title = \request()->title;
-                $news->body = \request()->body;
-                $news->author = 'Admin Lembaga Layanan Hukum ITB';
-                return redirect()->back()->with('success','Berhasil Upload Berita Baru');
-            }
-            else{
-                return redirect()->back()->with('alert','Harus ada Gambar');
-            }
+            $news = new News();
+            $news->id = 'NEWS' . str_random(20);
+            $news->image = $image_files_path;
+            $news->title = \request()->title;
+            $news->body = \request()->body;
+            $news->author = 'Admin Lembaga Layanan Hukum ITB';
+            $news->save();
+            return redirect('/admin')->with('success','Berhasil Upload Berita Baru');
+        }
+        catch (Exception $exception){
+            return redirect()->back()->with('alert',$exception->getMessage());
+        }
+    }
+    public function deleteNews($id){
+        try {
+            DB::table('news')->where('id', $id)->delete();
+            return redirect()->back()->with('success','Berhasil Menghapus Berita');
         }
         catch (Exception $exception){
             return redirect()->back()->with('alert',$exception->getMessage());

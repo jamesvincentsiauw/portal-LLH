@@ -36,7 +36,8 @@ Route::get('/admin/login', 'AdminController@showLoginForm');
 Route::post('/admin/logout', 'AdminController@logout');
 Route::get('/admin/published', 'AdminController@publishedRegulation')->middleware('admin');
 Route::get('/admin/on-progress', 'AdminController@onProgressRegulation')->middleware('admin');
+Route::get('/admin/news','AdminController@showNews')->middleware('admin');
+Route::get('/admin/news/add','AdminController@addNewsForm')->middleware('admin');
 Route::post('/admin/news/add','AdminController@addNews')->middleware('admin');
-Route::post('/admin/news/edit','AdminController@editNews')->middleware('admin');
-Route::post('/admin/news/delete','AdminController@deleteNews')->middleware('admin');
+Route::post('/admin/news/delete/{id}','AdminController@deleteNews')->middleware('admin');
 //End Admin Route
