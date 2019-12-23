@@ -338,7 +338,7 @@
                         </tr>
                         <tr>
                             <td class="content-block powered-by">
-                                Powered by <a href="http://medium.com/@kiddy.xyz">Tim Pengembang PPID ITB</a>
+                                Powered by Tim Pengembang PPID ITB
                             </td>
                         </tr>
                     </table>
