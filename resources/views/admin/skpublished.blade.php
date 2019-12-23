@@ -22,15 +22,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php
+                                            $i=1
+                                        ?>
                                         @foreach($submissions as $item)
-                                            <?php
-                                                $i=1
-                                            ?>
                                             <tr>
                                                 <th scope="row">{{$i}}</th>
                                                 <td style="width:40px">{{$item->id}}</td>
                                                 <td>{{$item->title}}</td>
-                                                <td>{{$item->created_at}}</td>
+                                                <td>{{ Carbon\Carbon::parse($item->created_at)->format('d M Y') }}</td>
                                                 <td>
                                                     <div class="row">
                                                         <div class="col">
@@ -42,6 +42,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <?php $i++ ?>
                                         @endforeach
                                         </tbody>
                                     </table>

@@ -16,7 +16,7 @@ use Mockery\Exception;
 class AdminController extends Controller
 {
     public function index(){
-        $submissions = Submission::all()->take(10);
+        $submissions = Submission::all()->take(12)->sortByDesc('created_at');
         $count = Submission::all();
         $chart = Charts::database($count, 'bar', 'highcharts')
             ->title('`')
@@ -47,15 +47,15 @@ class AdminController extends Controller
         return redirect('/');
     }
     public function publishedRegulation(){
-        $submissions = DB::table('documents')->paginate(20);
+        $submissions = DB::table('documents')->orderByDesc('created_at')->paginate(20);
         return view('admin.skpublished', compact('submissions'));
     }
     public function onProgressRegulation(){
-        $submissions = DB::table('submissions')->paginate(20);
+        $submissions = DB::table('submissions')->orderByDesc('created_at')->paginate(20);
         return view('admin.skpending', compact('submissions'));
     }
     public function showNews(){
-        $news = DB::table('news')->paginate(20);
+        $news = DB::table('news')->orderByDesc('created_at')->paginate(20);
         return view('admin.adminNews', compact('news'));
     }
     public function addNewsForm(){

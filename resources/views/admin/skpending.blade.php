@@ -39,7 +39,7 @@
                                         @foreach($submissions as $item)
                                             @if($item->status != 'Accepted')
                                                 <tr>
-                                                    <td>{{$item->created_at}}</td>
+                                                    <td>{{ Carbon\Carbon::parse($item->created_at)->format('d M Y') }}</td>
                                                     <td id="itemID">{{$item->id}}</td>
                                                     <td>{{$item->type}}</td>
                                                     <td>{{$item->submitterName}}</td>
