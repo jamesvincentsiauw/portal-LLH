@@ -38,7 +38,7 @@
                                 <tbody class="text-center">
                                 @foreach($news as $item)
                                     <tr>
-                                        <td>{{$item->created_at}}</td>
+                                        <td>{{ Carbon\Carbon::parse($item->created_at)->format('d M Y') }}</td>
                                         <td id="itemID">{{$item->id}}</td>
                                         <td>{{$item->title}}</td>
                                         <td>{{$item->body}}</td>

@@ -35,7 +35,7 @@ class UserController extends Controller
                 return redirect()->back()->with('success','Pengajuan Sukses. Tunggu Kabar Selanjutnya. ID pengajuan: '.$id);
             }
             else{
-                return redirect()->back()->with('alert','File tidak Ditemukan, Upload File!');
+                return redirect()->back()->with('alert','File tidak Ditemukan, Upload File! '. request()->file('draft_files')->getClientOriginalName());
             }
         }
         catch (\Exception $exception){

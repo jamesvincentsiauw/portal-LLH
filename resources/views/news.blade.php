@@ -14,7 +14,7 @@
                                 <div class="news-img" style="background-image: url({{asset('img/img_1.jpg')}})"></div>
                                 <div class="news-info">
                                     <h4>{{$item->title}}</h4>
-                                    <p class="news-date">{{$item->created_at}}</p>
+                                    <p class="news-date">{{$item->created_at->format('d-M-Y')}}</p>
                                 </div>
                             </a>
                         </div>

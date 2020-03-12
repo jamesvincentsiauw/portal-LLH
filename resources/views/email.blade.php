@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Boardicle Email</title>
+    <title>Submission Email</title>
     <style>
         /* -------------------------------------
             GLOBAL RESETS
@@ -332,13 +332,13 @@
                     <table border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td class="content-block">
-                                <span class="apple-link">Anak IT Inc</span>
+                                <span class="apple-link">Lembaga Layanan Hukum Institut Teknologi Bandung</span>
                                 {{--<br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif">Unsubscribe</a>.--}}
                             </td>
                         </tr>
                         <tr>
                             <td class="content-block powered-by">
-                                Powered by <a href="http://medium.com/@kiddy.xyz">Anak IT</a>.
+                                Powered by Tim Pengembang PPID ITB
                             </td>
                         </tr>
                     </table>
