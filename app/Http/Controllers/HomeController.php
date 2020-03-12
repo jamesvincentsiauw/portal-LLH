@@ -22,10 +22,17 @@ class HomeController extends Controller
         ]);
     }
     public function profile(){
-        return view('profile');
+        $submissions= \App\Submission::all();
+        $skpub= DB::table('submissions')->join('documents','submissions.id','=','documents.id')->where('submissions.type','sk')->count();
+        return view('profile')->with([
+            'sk'=>$submissions->where('type','=','sk')->count(),
+            'skpub' =>$skpub,
+            'peraturan' =>$submissions->where('type','=','peraturan')->count(),
+            'kerjasama' => $submissions->where('type','=','kerjasama')->count(),
+        ]);
     }
     public function news(){
-        $news = DB::table('news')->orderBy('created_at')->paginate(20);
+        $news = DB::table('news')->paginate(20);
         return view('news', compact('news'));
     }
     public function forms(){

@@ -40,19 +40,19 @@
         <div class="container ">
             <div class="row">
                 <div class="col text-center">
-                    <h1 id="statistic-1" class="gold-text">150</h1>
+                    <h1 id="statistic-1" class="gold-text">{{$sk}}</h1>
                     <h4>Pengajuan SK</h4>
                 </div>
                 <div class="col text-center">
-                    <h1 id="statistic-2" class="gold-text">80</h1>
+                    <h1 id="statistic-2" class="gold-text">{{$skpub}}</h1>
                     <h4>SK Terbit</h4>
                 </div>
                 <div class="col text-center">
-                    <h1 id="statistic-3" class="gold-text">25</h1>
+                    <h1 id="statistic-3" class="gold-text">{{$peraturan}}</h1>
                     <h4>Pengajuan Peraturan</h4>
                 </div>
                 <div class="col text-center">
-                    <h1 id="statistic-4" class="gold-text">12</h1>
+                    <h1 id="statistic-4" class="gold-text">{{$kerjasama}}</h1>
                     <h4>Pengajuan Kerjasama</h4>
                 </div>
             </div>
