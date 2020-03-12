@@ -14,6 +14,9 @@ class UserController extends Controller
         try {
             if (\request()->hasFile('draft_files')) {
                 $draft_files = \request()->file('draft_files');
+                if($draft_files->getClientOriginalExtension()!="zip"){
+                    return redirect()->back()->withInput()->with('alert', "Please upload zip file! You tried to upload ".$draft_files->getClientOriginalExtension()." file!");
+                }
                 $name = '/uploads/submissions/'.request()->name;
                 $draft_files->move(public_path($name),$draft_files->getClientOriginalName());
                 $draft_files_path = $name."/".$draft_files->getClientOriginalName();
@@ -35,11 +38,11 @@ class UserController extends Controller
                 return redirect()->back()->with('success','Pengajuan Sukses. Tunggu Kabar Selanjutnya. ID pengajuan: '.$id);
             }
             else{
-                return redirect()->back()->with('alert','File tidak Ditemukan, Upload File! '. request()->file('draft_files')->getClientOriginalName());
+                return redirect()->back()->withInput()->with('alert','File tidak Ditemukan, Upload File! '. request()->file('draft_files')->getClientOriginalName());
             }
         }
         catch (\Exception $exception){
-            return redirect()->back()->with('alert',$exception->getMessage());
+            return redirect()->back()->withInput()->with('alert',$exception->getMessage());
         }
     }
     public function trackSubmission($id){

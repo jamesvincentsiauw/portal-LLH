@@ -55,7 +55,7 @@
                         <div class="input-group">
                             <input type="text" name="keyword" class="form-control" id="inlineFormInputGroupUsername" placeholder="Pencarian" required>
                             <div class="input-group-append" style="background: white">
-                                <button id="button-addon1"class="btn btn-link text-primary"><i
+                                <button id="button-addon1" class="btn btn-link text-primary"><i
                                             class="fa fa-search"></i></button>
                             </div>
                         </div>
@@ -64,7 +64,6 @@
 
             </div>
         </div>
-    </div>
     </div>
 
 
