@@ -1,0 +1,56 @@
+.circle {
+    margin: auto;
+    width:200px;
+    height:200px;
+    border:15px solid grey;
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.completed {
+    border-color: #22c0e8;
+}
+
+.progress-connector {
+    width:15px;
+    height:200px;
+    background-color:grey;
+    margin: -3px auto;   
+    z-index: -1;
+    margin-left:2px;
+}
+
+.completed-connector {
+    background-color: #22c0e8;
+}
+
+.progress-container {
+    display: grid;
+    grid-template-columns:auto 15px auto;
+    grid-gap:auto;
+}
+
+.tag-container {
+    position:relative;
+}
+.left-progress-tag {
+    position: absolute;
+    text-align: right;
+    right: 5vw;
+    top: 20px;
+    font-size:30px;
+}
+
+.right-progress-tag {
+    position: absolute;
+    text-align: left;
+    left: 5vw;
+    top: 20px;
+    font-size:30px;
+}
+
+
+
+
